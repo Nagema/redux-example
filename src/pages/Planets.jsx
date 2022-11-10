@@ -23,7 +23,7 @@ const Planets = () => {
 
   return (
     <div>
-      <p>{isLoading ? "Esta cargando" : "here are the planets"}</p>
+      <p>{isLoading ? "loading" : "Here are the planets"}</p>
       {planets.map((planet) => {
         return (
           <div key={planet.id}>

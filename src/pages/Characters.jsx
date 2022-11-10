@@ -23,17 +23,20 @@ const Characters = () => {
     dispatch(getCharacters());
   }, []);
   return (
-    <div>
-      <div>{isLoading ? "esta cargando" : "here are the characters"}</div>
-      {characters.map((character) => {
-        return (
-          <div key={character.id}>
-            <p>{character.name}</p>
-            <img src={character.image} alt={character.name} />
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <div>
+        {isLoading
+          ? "Loading"
+          : characters.map((character) => {
+              return (
+                <div key={character.id}>
+                  <p>{character.name}</p>
+                  <img src={character.image} alt={character.name} />
+                </div>
+              );
+            })}
+      </div>
+    </>
   );
 };
 
